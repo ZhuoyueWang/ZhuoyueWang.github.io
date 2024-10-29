@@ -119,11 +119,13 @@ a img {
 }
 
 #console {
-  width:670px;
+  width: 670px;
   padding: 40px;
-  height: 820px;
-  margin:0 auto;
+  margin: 0 auto;
   background: #383737;
+  /* Remove the fixed height */
+  height: auto; /* Let it adjust based on content */
+  overflow: hidden; /* Avoid any scrollbars if content expands */
 }
 
 span.answer {
@@ -142,6 +144,141 @@ span.answer {
   text-transform: uppercase;
 
 }
+
+
+/* New sections styling */
+.section {
+  background-color: transparent; /* Use the same background as the main content */
+  padding: 60px 0;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.section .inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#research-papers, #review-experience{
+  background: #eee;
+  height: auto;
+  margin-top: -30px;
+  text-align: center;
+  padding: 60px 0 60px 0;
+  font-size: 26px;
+  line-height: 40px;
+}
+
+#media-reports {
+  background: #eee;
+  height: auto;
+  margin-top: -30px;
+  text-align: center;
+  padding: 60px 0 60px 0;
+  font-size: 26px;
+  line-height: 40px;
+}
+
+#research-papers .inner, #review-experience .inner, #media-reports .inner {
+  width: 95%; /* 设置为与 Project 部分一致的宽度 */
+  max-width: 1024px; /* 限制最大宽度 */
+  margin: 0 auto; /* 居中对齐 */
+}
+
+/* 调整每个条目的宽度，使其居中显示 */
+#research-papers .portfolio-thumb, #review-experience .portfolio-thumb, #media-reports .portfolio-thumb {
+  width: 95%; /* 确保条目适应容器宽度 */
+  margin: 20px 0; /* 设置上下边距 */
+  padding: 20px; /* 设置内边距，使内容与边框保持一致 */
+  box-sizing: border-box; /* 包含内边距在宽度计算中 */
+  border: 1px solid #ddd; /* 保持与其他部分一致的边框样式 */
+  background-color: white; /* 设置背景色为白色 */
+}
+
+/* 缩略图悬停效果 */
+#media-reports .portfolio-thumb img {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 为缩略图添加阴影 */
+  transition: transform 0.3s ease; /* 添加悬停效果 */
+}
+
+#media-reports .portfolio-thumb img:hover {
+  transform: scale(1.05); /* 悬停时放大效果 */
+}
+
+
+/* 调整 Media Reports 部分的文章列表字体样式 */
+#media-reports .portfolio-thumb ul {
+  list-style-type: disc; /* 使用圆点作为列表样式 */
+  padding-left: 20px;
+}
+
+#media-reports .portfolio-thumb ul li {
+  font-size: 14px; /* 调整字体大小 */
+  line-height: 1.6; /* 调整行高以便于阅读 */
+  color: #333; /* 调整字体颜色 */
+  margin-bottom: 8px;
+}
+
+#media-reports .portfolio-thumb ul li a {
+  color: #3a92c8; /* 设置链接颜色 */
+  text-decoration: none;
+  font-weight: normal;
+}
+
+#media-reports .portfolio-thumb ul li a:hover {
+  text-decoration: underline; /* 鼠标悬停时显示下划线 */
+}
+
+/* Media Article Section with Thumbnails */
+.media-article {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.article-thumbnail {
+  width: 60px; /* 缩略图宽度 */
+  height: 60px; /* 缩略图高度 */
+  margin-right: 15px; /* 缩略图与文本之间的间距 */
+  border-radius: 5px; /* 圆角效果 */
+}
+
+.media-article p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+.media-article p a {
+  color: #3a92c8;
+  text-decoration: none;
+}
+
+.media-article p a:hover {
+  text-decoration: underline;
+}
+
+.work-entry, .education-entry {
+  text-align: left;
+  margin-bottom: 20px;
+  padding: 0; /* Remove padding for consistent style */
+  background-color: transparent; /* Remove background color */
+  box-shadow: none; /* Remove shadow to match original style */
+}
+
+.work-entry p, .education-entry p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.tagline {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
 
 .tagline {
   text-align: center;
@@ -230,7 +367,7 @@ img.icon:hover {
 }
 
 #work{
-  background: #eee;
+  background: #ddd;
   height: auto;
   margin-top: -30px;
   text-align: center;
